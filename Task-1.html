@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab-6 (Task-1) </title>
+</head>
+<body style="background-color:#DCDCDC;">
+
+	<section class="container" style="padding: 30px;">
+		<div style="background-color: #2F4F4F; padding: 2px; border: 3px solid gray; border-radius: 20px;">
+			<h1 style="text-align: center; padding:1px; color:white;">Quiz - 1 </h1>
+		</div>
+
+		<div style="background-color: #8FBC8F; margin: auto; width: 800px; padding:2px; margin-top: 10px; display: flex; border: 3px solid gray; border-radius: 20px;">
+
+			<h1 style="color: red; font-family: Verdana; font-size: 20px; padding-left: 20px;"> Instruction:&nbsp &nbsp</h1> <h1 style="color: white; font-family: Verdana; font-size: 20px;">Choose the correct option among the following.</h1>
+			
+		</div>
+
+		<div style="background-color: #483D8B; margin: auto; width: 800px; border: 3px solid gray; border-radius: 20px; margin-top: 10px; height: 500px;">
+
+			<div style="background-color: white; margin: auto; width: 770px; border: 3px solid gray; border-radius: 20px; margin-top: 10px; height: 470px;">	
+                 
+                <p style="color:blue; margin-top: 10px; padding-left:20px;">Question:</p>  
+				<p style="font-size: Arial; font-size: 20px; padding:10px; padding-top: 5px;padding-left:20px;" id="question"> ______________ is a server side technology.</p>
+				<hr><hr>
+
+				<div style="flex-basis: 100%; height:0;"> </div> <!-- flex break div -->
+
+			    <div style="padding:20px;">
+			    	<p style="color:red; font-family: Verdana; font-size:1rem; padding-bottom: 20px;">● Select the answer form the selection box below ●</p>
+
+					<form id="quiz-form">
+
+						<select id="quiz-answer">
+							<option value="HTML">HTML</option>
+							<option value="CSS">CSS</option>
+							<option value="PHP">PHP</option>
+							<option value="NHP">NHP</option>
+						</select>
+						<br><br><br>
+						<button type="submit" id="btn">Check Answer</button>
+
+						<br><br><hr>
+						<div id="result" style="padding-top:10px; font-size: 1.3rem;"></div>
+
+				    </form>
+			    </div>
+
+			</div>
+			
+		</div>
+		
+	</section>
+
+</body>
+
+<style type="text/css">
+	
+	select {
+     background-color: black;
+     width: 200px;
+     padding: 5px;
+     color: white;
+     font-weight: bolder;
+     border: 2px solid red;
+     border-radius: 20px;
+     text-align: center;
+     font-size: 1rem;
+     margin-bottom: 80px;
+    }
+
+    option{
+     background-color: gray;
+     width: 200px;
+     padding: 5px;
+     margin: 10px;
+     color: black;
+     font-weight: bolder;
+     text-align: center;
+     font-size: 0.9rem;
+    }
+
+    #btn{
+	float: left;
+	border: 2px solid white;
+	border-radius: 100px;
+	margin: 0px 10px;
+	padding: 5px 14px;
+    outline: none;
+    background-color: rgb(0,76,153);
+    color: white;
+    font-size: 0.9rem;
+    font-weight:400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#btn:hover{
+	color: white;
+	background-color: rgb(0,128,255);
+	text-decoration: none;
+	box-shadow: 0 0 5px 0 rgba(0,128,255,2);
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	
+	$('#quiz-form').on("submit", function(event){
+
+		event.preventDefault();
+
+		var $answer = $('#quiz-answer');
+		var answer = $answer.val();
+		console.log(answer);
+
+		if(answer == 'PHP'){
+			$('#result').text("✅ Congratulations!! Your answer is correct.").css("color","green");
+			document.getElementById("question").innerHTML = answer + " is a server side technology.";
+
+		}
+		else{
+			$('#result').text("❎ Oops!! Your answer is incorrect.").css("color","red");
+			document.getElementById("question").innerHTML = answer + " is a server side technology.";
+		}
+
+	});
+
+</script>
+
+</html>
